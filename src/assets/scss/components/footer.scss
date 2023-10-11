@@ -1,0 +1,86 @@
+.footer {
+  @include themed() {
+    background-color: t("bg3");
+  }
+
+  padding: 41px 0;
+
+  @media only screen and (min-width: $md) {
+    padding: 80px 0 40px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 33px;
+
+    @media only screen and (min-width: $md) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__logo {
+    flex: 0;
+
+    @media only screen and (min-width: $md) {
+      flex: 1;
+    }
+
+    img {
+      width: 46px;
+      height: 46px;
+
+      @media only screen and (min-width: $md) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: $md) {
+      display: flex;
+    }
+  }
+
+  &__menu-list {
+    all: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  &__menu-item {
+    all: unset;
+    margin: 0 16px;
+
+    a {
+      color: $white-color;
+
+      &:hover {
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__settings {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__copyright {
+    color: $white-color;
+  }
+}

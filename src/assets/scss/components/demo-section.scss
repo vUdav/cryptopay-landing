@@ -1,0 +1,55 @@
+$grids: currency, one-click, statistics, exchange, send-coin, anonymous;
+
+.demo-section {
+  padding: 80px 0;
+
+  &__grid {
+    @media only screen and (min-width: $md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto auto;
+      gap: 20px 20px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "currency currency currency currency currency"
+        "one-click one-click statistics statistics statistics"
+        "exchange exchange statistics statistics statistics"
+        "send-coin send-coin send-coin anonymous anonymous";
+    }
+  }
+
+  &__grid-item {
+    margin-bottom: 16px;
+
+    @media only screen and (min-width: $md) {
+      margin-bottom: 0;
+    }
+
+    @each $item in $grids {
+      &--#{$item} {
+        @media only screen and (min-width: $md) {
+          grid-area: $item;
+        }
+      }
+    }
+  }
+
+  &__block {
+    @include themed() {
+      background-color: t("bg2");
+    }
+
+    padding: 32px;
+    border-radius: 24px;
+
+    @media only screen and (min-width: $md) {
+      padding: 42px 56px;
+      height: 100%;
+      border-radius: 40px;
+    }
+
+    &--pt-0 {
+      padding-top: 0;
+    }
+  }
+}

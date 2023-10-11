@@ -1,0 +1,54 @@
+.one-click-block {
+  &__animation-block {
+    width: 270px;
+    height: 120px;
+    margin: 0 auto 24px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+
+  &__btn {
+    @include themed() {
+      color: t('color');
+      background: t('animationBtnBg');
+    }
+
+    width: 226px;
+    height: 66px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+
+    &::before {
+      content: "🏝";
+      margin-right: 4px;
+    }
+
+    &--active {
+      @include themed() {
+        background: t('animationBtnActiveBg');
+      }
+    }
+  }
+
+  &__cursor {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: url('../img/cursor.svg') no-repeat center center;
+  }
+
+  &__content {
+    @include themed() {
+      color: t("colorLight");
+    }
+  }
+}

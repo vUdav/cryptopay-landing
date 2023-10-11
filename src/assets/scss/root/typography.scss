@@ -1,0 +1,82 @@
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    color: $second-color;
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 46px;
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  @media only screen and (min-width: $md) {
+    font-size: 80px;
+    margin-bottom: 32px;
+  }
+}
+
+h2, .h2 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  @media only screen and (min-width: $md) {
+    font-size: 56px;
+    margin-bottom: 32px;
+  }
+}
+
+h3, .h3 {
+  font-size: 28px;
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  @media only screen and (min-width: $md) {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+}
+
+ol, ul {
+  margin: 0;
+  padding-left: 21px;
+
+  li {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 31px;
+
+  li {
+    text-indent: -.7em;
+
+    &::before {
+      content: "•";
+      color: $primary-color;
+      position: relative;
+      left: -0.5em;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.slider-section {
+  @include themed() {
+    background-color: t("bg3");
+  }
+
+  padding: 32px 0;
+
+  @media only screen and (min-width: $md) {
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: auto;
+
+    @media only screen and (min-width: $md) {
+      height: 487px;
+      padding-top: 193px;
+      padding-bottom: 193px;
+      box-sizing: content-box;
+      display: flex;
+    }
+  }
+
+  &__slider {
+    text-align: center;
+
+    @media only screen and (min-width: $md) {
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 32px;
+
+    @media only screen and (min-width: $md) {
+      flex: none;
+    }
+
+    @media only screen and (min-width: $lg) {
+      max-width: 487px;
+    }
+  }
+
+  &__content {
+    @media only screen and (min-width: $md) {
+      margin-left: 122px;
+      margin-right: 83px;
+    }
+  }
+
+  &__text {
+    height: 65px;
+    margin-bottom: 32px;
+
+    @media only screen and (min-width: $md) {
+      height: auto;
+    }
+  }
+
+  &__btn {
+    display: flex;
+
+    @media only screen and (min-width: $md) {
+      display: inline-flex;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 32px;
+    font-weight: 500;
+
+    @media only screen and (min-width: $md) {
+      margin-top: 0;
+      flex-direction: column;
+    }
+
+    .swiper-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      @media only screen and (min-width: $md) {
+        flex-direction: column;
+        height: 100%;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      $gap: 12px;
+
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: rgba($color: $white-color, $alpha: 0.24);
+      margin: 0 calc($gap / 2);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      @media only screen and (min-width: $md) {
+        width: 4px;
+        height: 100%;
+        margin: calc($gap / 2) 0;
+      }
+
+      &-active {
+        background-color: $primary-color;
+      }
+
+      &:first-child {
+        margin-left: $gap;
+
+        @media only screen and (min-width: $md) {
+          margin-left: 0;
+          margin-top: $gap;
+        }
+      }
+
+      &:last-child {
+        margin-right: $gap;
+
+        @media only screen and (min-width: $md) {
+          margin-right: 0;
+          margin-bottom: $gap;
+        }
+      }
+    }
+  }
+}

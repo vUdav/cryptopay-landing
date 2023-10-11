@@ -1,0 +1,164 @@
+.exchange-block {
+  &__animation-block {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__animation-block-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__animation-block-list {
+    $collapse-offset: 43px;
+    $icon-size: 66px;
+    $collapse-offset-md: 65px;
+    $icon-size-md: 96px;
+    $icon-count: 3;
+
+    display: flex;
+    position: relative;
+    width: $icon-size * $icon-count - $collapse-offset * ($icon-count - 1);
+    position: relative;
+    left: $collapse-offset;
+
+    @media only screen and (min-width: $md) {
+      width: $icon-size-md * $icon-count - $collapse-offset-md * ($icon-count - 1);
+      left: $collapse-offset-md;
+    }
+
+    &-item {
+      @include themed() {
+        border-color: t("colorInvert2");
+      }
+
+      flex: none;
+      width: $icon-size;
+      height: $icon-size;
+      border-radius: 50%;
+      border: 3px solid;
+      box-shadow: 0px 0px 5.48936px 0px rgba(182, 186, 191, 0.04), 0px 1.37234px 2.05851px 0px rgba(0, 0, 0, 0.02);
+
+      @media only screen and (min-width: $md) {
+        width: $icon-size-md;
+        height: $icon-size-md;
+        border-width: 4px;
+      }
+
+      &--usdt {
+        padding: 10px;
+        background: linear-gradient(25deg, #8DDAD5 -22.31%, #1BA27A 65.28%);
+        position: relative;
+        z-index: 1;
+        left: - $collapse-offset;
+
+        @media only screen and (min-width: $md) {
+          left: - $collapse-offset-md;
+          padding: 15px;
+        }
+
+        img {
+          bottom: -3px;
+        }
+      }
+
+      &--btc {
+        padding: 10px;
+        background: linear-gradient(30deg, #FF930F -50.58%, #FBC411 93.3%);
+        position: relative;
+        z-index: 2;
+        left: - $collapse-offset * 2;
+
+        @media only screen and (min-width: $md) {
+          left: - $collapse-offset-md * 2;
+          padding: 15px;
+        }
+
+        img {
+          left: -2px;
+        }
+      }
+
+      &--ton {
+        padding: 15px;
+        background: linear-gradient(211deg, #04BEFE -2.24%, #4481EB 108.4%);
+        position: relative;
+        z-index: 3;
+        left: - $collapse-offset * 3;
+
+        @media only screen and (min-width: $md) {
+          left: - $collapse-offset-md * 3;
+          padding: 20px;
+        }
+
+        img {
+          bottom: -3px;
+        }
+      }
+
+      &--dollar {
+        padding: 15px;
+        background: linear-gradient(78deg, #181818 -16.92%, #2F2F2F 84.29%), linear-gradient(220deg, #010417 10.26%, #2B333F 84.25%), linear-gradient(46deg, #000 15.89%, #434343 171.16%);
+        font-size: 38px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white-color;
+        margin-left: 3px;
+
+        @media only screen and (min-width: $md) {
+          margin-left: 8px;
+        }
+
+        img {
+          bottom: -3px;
+        }
+      }
+    }
+  }
+
+  &__animation-block-arrows {
+    @include themed() {
+      border-color: t("colorInvert");
+      background-image: t("exchangeIcon");
+      background-color: t("exchangeBg");
+    }
+
+    width: 29px;
+    height: 18px;
+    border-radius: 13px;
+    border: 1px solid;
+    backdrop-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    position: absolute;
+    right: 53px;
+    z-index: 10;
+
+    @media only screen and (min-width: $md) {
+      width: 43px;
+      height: 25px;
+      background-size: 19px;
+      border-radius: 19px;
+      right: 78px;
+    }
+  }
+
+  &__animation-block-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+  }
+
+  &__content {
+    @include themed() {
+      color: t("colorLight");
+    }
+  }
+}

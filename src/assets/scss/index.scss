@@ -1,0 +1,30 @@
+@import "root/variables";
+
+@import "root/fonts";
+@import "root/main";
+@import "root/typography";
+
+// Utilities
+@import "utilities/colors";
+@import "utilities/reset";
+
+// Plugins
+@import "plugins/swiper";
+
+// Components
+@import "components/section";
+@import "components/btn";
+@import "components/container";
+@import "components/header";
+@import "components/footer";
+@import "components/top-section";
+@import "components/slider-section";
+@import "components/api-block";
+@import "components/quick-start-section";
+@import "components/demo-section";
+@import "components/currency-block";
+@import "components/one-click-block";
+@import "components/exchange-block";
+@import "components/statistics-block";
+@import "components/send-coin-block";
+@import "components/anonymous-block";

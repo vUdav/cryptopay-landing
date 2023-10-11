@@ -1,0 +1,27 @@
+.text {
+  &-primary {
+    color: $primary-color !important;
+  }
+
+  &-white {
+    color: $white-color !important;
+  }
+
+  &-themed {
+    @include themed() {
+      color: t("color");
+    }
+  }
+}
+
+.bg {
+  &-dark-blue {
+    background-color: $dark-blue-color !important;
+  }
+
+  &-themed {
+    @include themed() {
+      background-color: t("bg2");
+    }
+  }
+}

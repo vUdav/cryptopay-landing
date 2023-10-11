@@ -1,0 +1,60 @@
+.btn {
+  all: unset;
+
+  display: inline-flex;
+  padding: 12px 32px;
+  height: 46px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  color: $white-color;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  @media only screen and (min-width: $md) {
+    height: 60px;
+    padding: 18px 42px;
+  }
+
+  &:hover {
+    color: $white-color;
+    background-color: $second-color;
+    text-decoration: none;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid rgba($color: $white-color, $alpha: 0.6);
+    color: $white-color;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid rgba($color: $white-color, $alpha: 1);
+      color: $white-color;
+    }
+  }
+
+  &--light {
+    background-color: rgba($color: $second-color, $alpha: 0.12);
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white-color;
+    }
+  }
+
+  &--clear {
+    background-color: transparent;
+    color: $dark-color;
+
+    &:hover {
+      background-color: transparent;
+      color: $dark-color;
+    }
+  }
+}

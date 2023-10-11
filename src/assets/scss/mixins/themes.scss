@@ -1,0 +1,62 @@
+$themes: (
+  default: (
+    bg: $white-color,
+    bg2: $primary-light-color,
+    bg3: $dark-blue-color,
+    bgGradient: $dark-gradient-color,
+    color: $dark-color,
+    colorInvert: $white-color,
+    colorInvert2: $primary-light-color,
+    colorLight: rgba($dark-color, 0.8),
+    icon: url('../img/sun.svg'),
+    animationBtnBg: linear-gradient(240deg, rgba(41, 126, 226, 0.12) 3.57%, rgba(24, 97, 182, 0.12) 86.24%),
+    animationBtnActiveBg: linear-gradient(240deg, rgba(41, 126, 226, 0.18) 3.57%, rgba(24, 97, 182, 0.18) 86.24%),
+    exchangeIcon: url('../img/exchange-dark.svg'),
+    exchangeBg: rgba($white-color, 0.60),
+    phoneBottom: url('../img/phone-bottom-light.png'),
+    sendMessage1: url('../img/send-message-1-light.png'),
+    sendMessage2: url('../img/send-message-2-light.png'),
+    sendMessage3: url('../img/send-message-3-light.png'),
+    phone: url('../img/phone-light.png'),
+  ),
+
+  dark: (
+    bg: $dark-color,
+    bg2: $dark-color-2,
+    bg3: $dark-color-2,
+    bgGradient: $white-color,
+    color: $white-color,
+    colorInvert: $dark-color,
+    colorInvert2: $dark-blue-color,
+    colorLight: rgba($white-color, 0.8),
+    icon: url('../img/moon.svg'),
+    animationBtnBg: linear-gradient(233deg, #9FCCFA -20.48%, #0974F1 97.38%),
+    animationBtnActiveBg: (linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(233deg, #9FCCFA -20.48%, #0974F1 97.38%)),
+    exchangeIcon: url('../img/exchange-light.svg'),
+    exchangeBg: rgba($dark-color, 0.60),
+    phoneBottom: url('../img/phone-bottom-dark.png'),
+    sendMessage1: url('../img/send-message-1-dark.png'),
+    sendMessage2: url('../img/send-message-2-dark.png'),
+    sendMessage3: url('../img/send-message-3-dark.png'),
+    phone: url('../img/phone-dark.png'),
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    html[data-theme=#{$theme}] & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

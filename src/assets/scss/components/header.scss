@@ -1,0 +1,104 @@
+.header {
+  padding: 53px 0;
+
+  @media only screen and (min-width: $md) {
+    padding: 42px 0 65px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    flex: 0;
+
+    @media only screen and (min-width: $md) {
+      flex: 1;
+    }
+
+    img {
+      width: 46px;
+      height: 46px;
+
+      @media only screen and (min-width: $md) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (min-width: $md) {
+      display: flex;
+    }
+  }
+
+  &__menu-list {
+    all: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  &__menu-item {
+    all: unset;
+    margin: 0 16px;
+
+    a {
+      @include themed() {
+        color: t("color");
+      }
+
+      &:hover {
+        color: $primary-color !important;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__settings {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__settings-mode {
+    $size: 30px;
+
+    padding: 0 16px;
+    box-sizing: content-box;
+    width: $size;
+    height: $size;
+
+    @media only screen and (min-width: $md) {
+      padding: 0 12px;
+      width: $size + 10px;
+      height: $size + 10px;
+    }
+
+    &--light {
+      @include themed() {
+        background-image: t("icon");
+      }
+
+      background-size: $size;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and (min-width: $md) {
+        background-size: $size + 10px;
+      }
+    }
+  }
+}

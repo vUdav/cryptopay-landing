@@ -1,0 +1,143 @@
+$selector: '.quick-start-section';
+
+#{$selector} {
+  padding: 32px 0;
+
+  @media only screen and (min-width: $md) {
+    padding: 120px 0;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__steps {
+    @media only screen and (min-width: $md) {
+      margin-top: 40px;
+    }
+  }
+
+  &__step {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 400px;
+
+    @media only screen and (min-width: $md) {
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    @media only screen and (min-width: $lg) {
+      max-width: inherit;
+      display: flex;
+      align-items: center;
+    }
+
+    &--reverse-order {
+      @media only screen and (min-width: $lg) {
+        flex-direction: row-reverse;
+      }
+
+      #{$selector}__step-content {
+        @media only screen and (min-width: $lg) {
+          margin-left: 0;
+          margin-right: 122px;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 277px;
+    padding: 26px;
+    border-radius: 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: $lg) {
+      flex: none;
+      width: 590px;
+      height: 488px;
+      padding: 100px;
+      border-radius: 40px;
+    }
+
+    &--1 {
+      background: linear-gradient(297deg, #8EC5FC 8.25%, #E0C3FC 91.76%);
+      padding: 0;
+
+      @media only screen and (min-width: $lg) {
+        padding: 74px;
+      }
+    }
+
+    &--2 {
+      background: linear-gradient(207deg, #FCB69F 6.91%, #FFECD2 92.45%);
+    }
+
+    &--3 {
+      background: linear-gradient(0deg, #C2E9FB -16.6%, #A1C4FD 106.15%);
+    }
+  }
+
+  &__step-content {
+    display: flex;
+
+    @media only screen and (min-width: $lg) {
+      width: 100%;
+      margin-left: 122px;
+      display: block;
+    }
+  }
+
+  &__step-number {
+    @include themed() {
+      color: t(colorInvert);
+      background: t(bgGradient);
+    }
+
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 0px rgba(182, 186, 191, 0.04), 0px 2px 3px 0px rgba(0, 0, 0, 0.02);
+    margin-right: 16px;
+
+    @media only screen and (min-width: $lg) {
+      width: 64px;
+      height: 64px;
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__step-paragraph {
+    margin-bottom: 16px;
+
+    @media only screen and (min-width: $lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__step-text {
+    @include themed() {
+      color: t("colorLight");
+    }
+  }
+}

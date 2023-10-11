@@ -1,0 +1,118 @@
+.top-section {
+  padding-bottom: 110px;
+  text-align: center;
+
+  @media only screen and (min-width: $md) {
+    padding-bottom: 140px;
+    text-align: left;
+  }
+
+  &__row {
+    @media only screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    margin-bottom: 52px;
+  }
+
+  &__text {
+    margin-bottom: 12px;
+
+    @media only screen and (min-width: $md) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 24px;
+
+    @media only screen and (min-width: $md) {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__emoji-list-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    @media only screen and (min-width: $md) {
+      margin-bottom: 16px;
+      justify-content: start;
+    }
+  }
+
+  &__emoji-list {
+    $collapse-offset: 16px;
+    $icon-size: 63px;
+    $collapse-offset-md: 30px;
+    $icon-size-md: 96px;
+    $icon-count: 5;
+
+    display: flex;
+    position: relative;
+    width: $icon-size * $icon-count - $collapse-offset * ($icon-count - 1);
+    position: relative;
+    left: $collapse-offset;
+
+    @media only screen and (min-width: $md) {
+      width: $icon-size-md * $icon-count - $collapse-offset-md * ($icon-count - 1);
+      left: $collapse-offset-md;
+    }
+
+    &-item {
+      @include themed() {
+        border-color: t("colorInvert");
+      }
+
+      flex: none;
+      width: $icon-size;
+      height: $icon-size;
+      border-radius: 50%;
+      border: 2px solid;
+
+      @media only screen and (min-width: $md) {
+        width: $icon-size-md;
+        height: $icon-size-md;
+        border-width: 4px;
+      }
+  
+      @for $i from 1 through $icon-count {
+        &--#{$i} {
+          background-image: url("../img/emoji#{$i}.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: relative;
+          left: - $collapse-offset * $i;
+
+          @media only screen and (min-width: $md) {
+            left: - $collapse-offset-md * $i;
+          }
+        }
+      }
+    }
+  }
+
+  &__phone-image {
+    @include themed() {
+      background-image: t("phone");
+    }
+
+    height: 635px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @media only screen and (min-width: $md) {
+      flex: none;
+      width: 488px;
+      height: 700px;
+    }
+  }
+}
