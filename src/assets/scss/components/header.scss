@@ -58,6 +58,8 @@
         color: t("color");
       }
 
+      font-weight: 500;
+
       &:hover {
         color: $primary-color !important;
         text-decoration: none;
