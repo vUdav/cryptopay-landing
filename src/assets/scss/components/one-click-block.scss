@@ -26,7 +26,13 @@
     font-weight: 500;
 
     &::before {
-      content: "🏝";
+      content: "";
+      width: 21px;
+      height: 21px;
+      background-image: url('../img/emoji-tree.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       margin-right: 4px;
     }
 
