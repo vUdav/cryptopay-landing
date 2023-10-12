@@ -65,7 +65,7 @@ $selector: '.quick-start-section';
       width: 100%;
     }
 
-    @media only screen and (min-width: $lg) {
+    @media only screen and (min-width: $md) {
       flex: none;
       width: 590px;
       height: 488px;
@@ -75,11 +75,6 @@ $selector: '.quick-start-section';
 
     &--1 {
       background: linear-gradient(297deg, #8EC5FC 8.25%, #E0C3FC 91.76%);
-      padding: 0;
-
-      @media only screen and (min-width: $lg) {
-        padding: 74px;
-      }
     }
 
     &--2 {
