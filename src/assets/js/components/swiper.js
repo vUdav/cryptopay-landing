@@ -13,6 +13,7 @@ import { Pagination, Autoplay } from "swiper/modules";
     autoHeight: true,
     direction: "horizontal",
     loop: true,
+    grabCursor: true,
     autoplay: {
       delay: 3000,
     },
