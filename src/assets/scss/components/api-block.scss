@@ -155,5 +155,7 @@
     @include themed() {
       color: t('colorLight');
     }
+
+    font-weight: 500;
   }
 }
