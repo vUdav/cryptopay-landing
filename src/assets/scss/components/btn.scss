@@ -41,6 +41,7 @@
   &--light {
     background-color: rgba($color: $second-color, $alpha: 0.12);
     color: $deep-blue-color;
+    border: 1px solid transparent;
 
     &:hover {
       background-color: $primary-color;
